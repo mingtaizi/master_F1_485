@@ -1,0 +1,23 @@
+--cpu Cortex-M3
+"f1_485_test\startup_stm32f103xe.o"
+"f1_485_test\main.o"
+"f1_485_test\stm32f1xx_it.o"
+"f1_485_test\stm32f1xx_hal_msp.o"
+"f1_485_test\stm32f1xx_hal_gpio_ex.o"
+"f1_485_test\stm32f1xx_hal_tim.o"
+"f1_485_test\stm32f1xx_hal_tim_ex.o"
+"f1_485_test\stm32f1xx_hal_uart.o"
+"f1_485_test\stm32f1xx_hal.o"
+"f1_485_test\stm32f1xx_hal_rcc.o"
+"f1_485_test\stm32f1xx_hal_rcc_ex.o"
+"f1_485_test\stm32f1xx_hal_gpio.o"
+"f1_485_test\stm32f1xx_hal_dma.o"
+"f1_485_test\stm32f1xx_hal_cortex.o"
+"f1_485_test\stm32f1xx_hal_pwr.o"
+"f1_485_test\stm32f1xx_hal_flash.o"
+"f1_485_test\stm32f1xx_hal_flash_ex.o"
+"f1_485_test\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "F1_485_test\F1_485_test.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "F1_485_test.map" -o F1_485_test\F1_485_test.axf

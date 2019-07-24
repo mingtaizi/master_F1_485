@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"master_485_test\startup_stm32f105xc.o"
+"master_485_test\main.o"
+"master_485_test\gpio.o"
+"master_485_test\usart.o"
+"master_485_test\stm32f1xx_it.o"
+"master_485_test\stm32f1xx_hal_msp.o"
+"master_485_test\print.o"
+"master_485_test\stm32f1xx_hal_gpio_ex.o"
+"master_485_test\stm32f1xx_hal_tim.o"
+"master_485_test\stm32f1xx_hal_tim_ex.o"
+"master_485_test\stm32f1xx_hal_uart.o"
+"master_485_test\stm32f1xx_hal.o"
+"master_485_test\stm32f1xx_hal_rcc.o"
+"master_485_test\stm32f1xx_hal_rcc_ex.o"
+"master_485_test\stm32f1xx_hal_gpio.o"
+"master_485_test\stm32f1xx_hal_dma.o"
+"master_485_test\stm32f1xx_hal_cortex.o"
+"master_485_test\stm32f1xx_hal_pwr.o"
+"master_485_test\stm32f1xx_hal_flash.o"
+"master_485_test\stm32f1xx_hal_flash_ex.o"
+"master_485_test\system_stm32f1xx.o"
+--library_type=microlib --strict --scatter "master_485_test\master_485_test.sct"
+--summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "master_485_test.map" -o master_485_test\master_485_test.axf
