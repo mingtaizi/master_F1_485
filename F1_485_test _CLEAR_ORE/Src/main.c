@@ -120,11 +120,18 @@ int main(void)
 	
 	
 
-	for(i = 0;i<10;i++)
-	{
-			TransmitBuff[i] = 0x0;
-	}
-	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
+//	for(i = 0;i<10;i++)
+//	{
+//			TransmitBuff[i] = 0x0;
+//	}
+//		
+//	// 转为发送状态
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
+//	HAL_Delay(15);
+//	HAL_UART_Transmit_DMA(&huart3, (uint8_t *)TransmitBuff,10);
+//	HAL_Delay(100);
+//	// 转为接收状态
+//	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -151,11 +158,11 @@ int main(void)
 			
 			// 转为发送状态
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_SET);
-			HAL_Delay(5);
-			HAL_UART_Transmit_DMA(&huart3, (uint8_t *)TransmitBuff,10);
+			HAL_Delay(100);
+			HAL_UART_Transmit_DMA(&huart3, (uint8_t *)TransmitBuff,6);
 			//while(huart2.hdmarx->Instance->CNDTR);
 			// 转为接收状态
-			HAL_Delay(10);
+			HAL_Delay(100);
 			//while(!get_flag);
 			HAL_GPIO_WritePin(GPIOB, GPIO_PIN_15, GPIO_PIN_RESET);  // 将接收状态引脚拉低，485转为接收状态
 			
@@ -201,13 +208,13 @@ void Fill_Buffer(uint8_t* RecvBuff,uint8_t* TransBuff)
 		number++;
 		uint32_to_uint8(number,TransBuff);
 	
-		for(i = 0;i<4;i++)
-		{
-				if(TransBuff[i]==0x0a)
-				{
-						TransBuff[i] = 0x0b;
-				}
-		}
+//		for(i = 0;i<4;i++)
+//		{
+//				if(TransBuff[i]==0x0a)
+//				{
+//						TransBuff[i] = 0x0b;
+//				}
+//		}
 		TransBuff[4] = 0x0a;
 		TransBuff[5] = 0x0a;
 }
